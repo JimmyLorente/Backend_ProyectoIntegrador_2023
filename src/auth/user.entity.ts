@@ -1,0 +1,18 @@
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Test } from '@nestjs/testing';
+
+@Entity()
+export class User{
+    @PrimaryGeneratedColumn('uuid')
+    id:string;
+    @Column({ length:20})
+    name:string;
+    @Column({ length:100})
+    email:string;
+    @Column({ length:100})
+    password:string;
+    @Column({ type: 'boolean', default: false})
+    active:boolean;
+    @CreateDateColumn()
+    CreateOn:Date;
+} 
